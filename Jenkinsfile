@@ -18,7 +18,7 @@ pipeline {
             steps {
                 script {
                     echo 'master branch'
-                    git credentialsId: env.GIT_CREDENTIALS, url: env.REPOSITORY, branch: 'master'
+                    git credentialsId: env.GIT_CREDENTIALS, url: env.REPOSITORY, branch: 'develop'
                 }
             }
         }
@@ -35,16 +35,6 @@ pipeline {
                 sh 'npm run test:component'
                 sh 'npm run test:e2e'
             }
-        }
-        stage('Build') {
-            steps {
-                echo 'npm run build'
-            }
-        }
-        stage('Deploy') {
-          steps {
-            echo 'deploy'
-          }
         }
     }
 }

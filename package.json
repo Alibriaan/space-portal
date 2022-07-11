@@ -21,7 +21,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run test:unit && npm run test:unit:component && npm runtest:e2e"
+      "pre-push": "npm run test:unit"
     }
   },
   "scripts": {

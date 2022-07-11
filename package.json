@@ -21,7 +21,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run test:unit && test:unit:component && test:e2e"
+      "pre-push": "npm run test:unit && npm run test:unit:component && npm runtest:e2e"
     }
   },
   "scripts": {
@@ -61,6 +61,8 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-window": "^1.8.5",
     "cypress": "^10.3.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "supertest": "^6.2.4",
     "ts-jest": "^28.0.5",
     "typescript": "^4.7.4"

@@ -33,7 +33,7 @@ pipeline {
             steps {
                 echo 'Test process'
                 sh 'npm run test:unit'
-                sh 'npm run test:component'
+                sh 'npm run test:unit:component'
                 sh 'npm run test:e2e'
             }
         }

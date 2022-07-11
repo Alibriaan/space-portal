@@ -31,6 +31,7 @@
     "eject": "react-scripts eject",
     "test:unit": "jest",
     "open:e2e": "cypress open",
+    "prepare": "husky install",
     "test:e2e": "cypress run --e2e --browser chrome"
   },
   "eslintConfig": {

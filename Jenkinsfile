@@ -2,15 +2,16 @@
 pipeline {
     agent {
         docker {
-            image 'node:lts'
-            args '-u root -p 3030:3030'
+          image 'node:lts'
+          args '-u root'
         }
     }
 
     environment {
-      HOME = "${env.WORKSPACE}"
-      REPOSITORY = 'https://github.com/Alibriaan/space-portal.git'
-      GIT_CREDENTIALS = 'jenkins_github_credentials'
+        NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
+        HOME = '.'
+        REPOSITORY = 'https://github.com/Alibriaan/space-portal.git'
+        GIT_CREDENTIALS = 'jenkins_github_credentials'
     }
 
     stages {

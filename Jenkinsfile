@@ -8,7 +8,8 @@ pipeline {
     }
 
     environment {
-      HOME = "${env.WORKSPACE}"
+      //HOME = "${env.WORKSPACE}"
+      HOME  = '.'
       REPOSITORY = 'https://github.com/Alibriaan/space-portal.git'
       GIT_CREDENTIALS = 'jenkins_github_credentials'
     }

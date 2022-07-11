@@ -3,7 +3,7 @@ pipeline {
     agent {
         docker {
             image 'node:lts'
-            args '-u root -p 3030:3030'
+            args '-u root'
         }
     }
 

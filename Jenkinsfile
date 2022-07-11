@@ -8,10 +8,11 @@ pipeline {
     }
 
     environment {
-      //HOME = "${env.WORKSPACE}"
-      HOME  = '.'
-      REPOSITORY = 'https://github.com/Alibriaan/space-portal.git'
-      GIT_CREDENTIALS = 'jenkins_github_credentials'
+        NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
+        HOME = '.'
+        BRANCH_NAME = 'develop'
+        REPOSITORY = 'https://github.com/Alibriaan/space-portal.git'
+        GIT_CREDENTIALS = 'jenkins_github_credentials'
     }
 
     stages {
@@ -33,7 +34,7 @@ pipeline {
             steps {
                 echo 'Test process'
                 sh 'npm run test:unit'
-                sh 'npm run test:component'
+                sh 'npm run test:unit:component'
                 sh 'npm run test:e2e'
             }
         }

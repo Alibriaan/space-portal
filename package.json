@@ -19,11 +19,6 @@
     "ts-node": "^10.8.2",
     "web-vitals": "^2.1.4"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run test:unit"
-    }
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

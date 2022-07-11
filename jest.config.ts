@@ -3,7 +3,7 @@ import type { Config } from '@jest/types';
 const config: Config.InitialOptions = {
   verbose: true,
   preset: 'ts-jest',
-  testEnvironment: 'node', 
+  testEnvironment: 'node',
   rootDir: './src/__test__/unit',
   coverageDirectory: './src/__test__/unit',
   coveragePathIgnorePatterns: [

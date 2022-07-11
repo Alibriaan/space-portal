@@ -27,7 +27,7 @@
     "test:unit": "jest",
     "open:e2e": "cypress open",
     "test:e2e": "cypress run --e2e --browser chrome",
-    "prepare": "npx husky-init"
+    "postinstall": "npx husky-init"
   },
   "eslintConfig": {
     "extends": [

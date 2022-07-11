@@ -12,7 +12,7 @@ function App() {
           router.map((route: RouteConfiguration, index: number) => (
             <Route key={index} path={route.link} element={route.page} />
           ))
-        } 
+        }
       </Routes>
     </Router>
   );

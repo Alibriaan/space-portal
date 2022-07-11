@@ -4,7 +4,7 @@ import { HashRouter as Router } from "react-router-dom";
 import router, { RouteConfiguration } from './router';
 import './App.css';
 
-function App() {  
+function App() {
   return (
     <Router>
       <Routes>

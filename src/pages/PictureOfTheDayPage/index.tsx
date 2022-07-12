@@ -30,7 +30,7 @@ export default function PictureOfTheDayPage() {
       >
         <CardContent>
           {
-            !!pictureOfTheDay 
+            pictureOfTheDay
               ? 
                 <Stack spacing={2}>
                   {

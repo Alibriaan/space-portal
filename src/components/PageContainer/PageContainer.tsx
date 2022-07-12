@@ -1,7 +1,7 @@
 import { ContainerProps } from "@mui/material";
 import { Container, styled } from "@mui/system";
 
-const PageContainer = styled(Container)<ContainerProps>((props) => ({
+const PageContainer = styled(Container)<ContainerProps>(() => ({
   '&': {
     width: '100vw',
     minHeight: '100vh',

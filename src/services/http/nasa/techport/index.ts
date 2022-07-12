@@ -1,5 +1,5 @@
 import { AxiosResponse } from 'axios';
-import { TechPortProjectsResponse, TechPortProjectResponse, TechPortProjectsQuery, TechPortProjectListElement } from '../../../../interfaces/techport-response.interface';
+import { TechPortProjectsResponse, TechPortProjectResponse, TechPortProjectsQuery, TechPortProjectListElement } from '../../../../interfaces/techport-response.interfaces';
 import { api, API_KEY } from '../index';
 
 const entryPoints = {
@@ -11,11 +11,11 @@ const entryPoints = {
 export const getProjects = async (query: TechPortProjectsQuery): Promise<TechPortProjectListElement[]> => {
   const result = await api.get<TechPortProjectsResponse>(`${entryPoints.projects}?api_key=${API_KEY}`);
   let countOfElements = 0;
-  
+
   return result.data.projects.filter((item, index) => {
     if(index >= query.offset && countOfElements <= query.limit) {
       ++countOfElements;
-      
+
       return true;
     } else {
       return false;

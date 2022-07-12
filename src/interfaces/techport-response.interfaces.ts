@@ -24,7 +24,7 @@ export interface ProjectFile {
     "lkuCodeType": {
       "codeType": string,
       "description": string
-    }
+    },
   },
   "objectTypeId": number,
   "fileSizeString": string

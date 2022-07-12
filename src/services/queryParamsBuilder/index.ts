@@ -1,4 +1,4 @@
-export default function buildQueryParamsString(query: { [key: string]: any}): string {
+export default function buildQueryParamsString(query: { [key: string]: unknown}): string {
   let queryString = '';
 
   Object.keys(query).forEach((key, index) => {

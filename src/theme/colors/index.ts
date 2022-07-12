@@ -1,1 +1,3 @@
-import { purple, red } from '@mui/material/colors';
+const themeColors = {};
+
+export default themeColors;

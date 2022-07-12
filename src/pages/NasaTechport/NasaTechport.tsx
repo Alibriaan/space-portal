@@ -1,10 +1,9 @@
 import { Card, CardContent, Container, FormControl, MenuItem, Select, SelectChangeEvent, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import PageContainer from "../../components/PageContainer/PageContainer";
-import { ProjectMember, TechPortProjectListElement, TechPortProjectResponse } from "../../interfaces/techport-response.interface";
+import { ProjectMember, TechPortProjectListElement, TechPortProjectResponse } from "../../interfaces/techport-response.interfaces";
 import { getProject, getProjects } from "../../services/http/nasa/techport";
 import Paper from '@mui/material/Paper';
-import InputLabel from '@mui/material/InputLabel';
 import router, { RouterPages } from "../../router";
 
 function MemberTable(props: { members: ProjectMember[]}) {
@@ -104,7 +103,6 @@ function ProjectDescription(props: { projectDescription: TechPortProjectResponse
 
 export default function NasaTechPortPage() {
   const [techPortProjects, setTechPortProjects] = useState<TechPortProjectListElement[]>();
-  const [selectedProjects, setSelectedProjects] = useState<string>('');
   const [projectDescription, setProjectDescription] = useState<TechPortProjectResponse>();
 
   useEffect(() => {
@@ -122,8 +120,6 @@ export default function NasaTechPortPage() {
   }
 
   const handleProjectSelect = (event: SelectChangeEvent) => {
-    setSelectedProjects(event.target.value);
-
     fetchProjectDescription(event.target.value);
   };
 

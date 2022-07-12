@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { API_HEADERS, API_KEY } from '../index';
+import { API_KEY } from '../index';
 
 const EPIC_API_ENTRY_POINT = 'https://epic.gsfc.nasa.gov';
 

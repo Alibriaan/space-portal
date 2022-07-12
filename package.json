@@ -13,6 +13,8 @@
     "husky": "^8.0.1",
     "moment": "^2.29.4",
     "normalize.css": "^8.0.1",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^7.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-ripples": "^2.2.1",

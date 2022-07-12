@@ -49,7 +49,7 @@ pipeline {
         stage('S3 Deploy') {
           steps {
             withAWS(region:AWS_S3_REGION, credentials: AWS_S3_CREDENTIALS) {
-              sh 'echo "Uploading content with AWS creds"'
+              sh 'echo "Uploading content with AWS S3 BUCKET"'
                 s3Upload(
                   bucket: AWS_S3_BUCKET,
                   includePathPattern: "*",

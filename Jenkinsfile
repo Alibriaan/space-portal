@@ -49,7 +49,7 @@ pipeline {
               sh 'echo "Uploading content with AWS creds"'
                 s3Upload(
                   bucket: AWS_S3_BUCKET,
-                  includePathPattern: "*",
+                  includePathPattern: "**/*.*",
                   workingDir: "${WORKSPACE}/build",
                 )
             }

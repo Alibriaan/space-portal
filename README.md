@@ -3,7 +3,7 @@
 
 Проект создан для урпрощения доступа к данным NASA и для превлечения людей в космическую отрасль.
 
-[![Build Status](http://18.118.113.13:8080/buildStatus/icon?job=Space+portal+project)](http://18.118.113.13:8080/job/Space%20portal%20project/)
+![Build Status](http://18.118.113.13:8080/buildStatus/icon?job=Space+portal+project)
 
 ## Instalation
 ```bash

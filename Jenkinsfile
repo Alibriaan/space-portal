@@ -41,11 +41,11 @@ pipeline {
                 // sh 'npm run test:e2e'
         //    }
         //  }
-        // stage('Build') {
-        //   steps {
-        //     sh 'npm run build'
-        //   }
-        // }
+        stage('Build') {
+          steps {
+            sh 'npm run build'
+          }
+        }
         stage('S3 Deploy') {
           steps {
             withAWS(region:AWS_S3_REGION, credentials: AWS_S3_CREDENTIALS) {

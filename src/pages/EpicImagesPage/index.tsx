@@ -60,7 +60,7 @@ export default function EpicImagesPage() {
 
   return (
   <Container maxWidth={false} data-testid={router[RouterPages.epic].testId}>
-    <Table>
+    <Table data-testid={`${router[RouterPages.epic].testId}-data-table`}>
       <TableHead>
         <TableRow>
           {
@@ -75,8 +75,13 @@ export default function EpicImagesPage() {
       {
         naturalImagesConfiguration?.map((row: NeowsNaturalImagesRequestResponse, index) => (
           <TableRow hover key={index}>
-            <TableCell>
-              <Button onClick={handleSelectImageClick(row)}>Watch Image</Button>
+            <TableCell data-testid={`${router[RouterPages.epic].testId}-data-table-action-cell`}>
+              <Button
+                data-testid={`${router[RouterPages.epic].testId}-data-table-open-image-modal-button`}
+                onClick={handleSelectImageClick(row)}
+              >
+                Watch Image
+              </Button>
             </TableCell>
             <TableCell> {row.caption} </TableCell>
             <TableCell> {row.version} </TableCell>
@@ -91,12 +96,19 @@ export default function EpicImagesPage() {
       }
     </Table>
     <Dialog
+      data-testid={`${router[RouterPages.epic].testId}-data-table-modal`}
       open={imageSelected}
       onClose={handleImageModalClose}
     >
       {
         <>
-          <img onLoad={handleImageLoad} src={imageUrl} alt='Earth Image' style={{opacity: imageLoaded ? 1 : 0 }} />
+          <img
+            data-testid={`${router[RouterPages.epic].testId}-data-table-modal-image`}
+            onLoad={handleImageLoad}
+            src={imageUrl}
+            alt='Earth Image'
+            style={{opacity: imageLoaded ? 1 : 0 }} 
+          />
           {
             imageLoaded ? <></> : <PositionedSkeleton position='absolute' top='0' left='0' animation="wave" variant="rectangular" width='100%' height='100%' />
           }

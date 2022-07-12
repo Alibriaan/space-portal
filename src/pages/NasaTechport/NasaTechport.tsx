@@ -37,7 +37,10 @@ function MemberTable(props: { members: ProjectMember[]}) {
 
 function ProjectDescription(props: { projectDescription: TechPortProjectResponse}) {
   return (
-    <Card elevation={5}>
+    <Card
+      elevation={5}
+      data-testid={`${router[RouterPages.nasaTechport].testId}-project-description`}
+    >
       <CardContent>
         <Stack spacing={2}>
           <Container maxWidth={false}>
@@ -137,10 +140,18 @@ export default function NasaTechPortPage() {
           margin: '25px',
         }}>
           <Typography variant='h4'>Project Id</Typography>
-          <Select labelId="project-select-label" onChange={handleProjectSelect}>
+          <Select
+            labelId="project-select-label"
+            data-testid={`${router[RouterPages.nasaTechport].testId}-project-select`}
+            onChange={handleProjectSelect}
+          >
             {
               techPortProjects?.map((project, index) => (
-                <MenuItem key={index} value={project.projectId}>{project.projectId}</MenuItem>
+                <MenuItem
+                  key={index}
+                  value={project.projectId}
+                  data-testid={`${router[RouterPages.nasaTechport].testId}-project-select-option`}
+                >{project.projectId}</MenuItem>
               ))
             }
           </Select>

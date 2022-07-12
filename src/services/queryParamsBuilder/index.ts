@@ -2,7 +2,10 @@ export default function buildQueryParamsString(query: { [key: string]: unknown})
   let queryString = '';
 
   Object.keys(query).forEach((key, index) => {
-    queryString = (index === 0) ?  `${key}=${query[key]}` :`${queryString}&${key}=${query[key]}`;
+    const isObject = typeof query[key] === 'object';
+    const value = isObject ? JSON.stringify(query[key] as string) : query[key];
+
+    queryString = (index === 0) ?  `${key}=${value}` :`${queryString}&${key}=${value}`;
   })
 
   return queryString;

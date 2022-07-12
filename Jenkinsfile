@@ -1,11 +1,8 @@
 #!/usr/bin/env groovy
 pipeline {
-    agent {
-        docker {
-            image 'node:lts'
-            args '-u root'
-        }
-    }
+    agent any
+
+    tools { nodejs "node" }
 
     environment {
         NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"

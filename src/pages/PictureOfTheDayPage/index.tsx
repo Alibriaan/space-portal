@@ -17,7 +17,7 @@ export default function PictureOfTheDayPage() {
 
 
   const getPicture = () => {
-    return pictureOfTheDay?.url ? <img src={pictureOfTheDay?.url} alt='picture of ther day' /> : undefined;
+    return pictureOfTheDay?.url ? <img data-testid={`${router[RouterPages.pictureOfTheDay].testId}-image`} src={pictureOfTheDay?.url} alt='picture of ther day' /> : undefined;
   }
 
   return (
@@ -30,24 +30,24 @@ export default function PictureOfTheDayPage() {
       >
         <CardContent>
           {
-            !!pictureOfTheDay 
+            pictureOfTheDay
               ? 
                 <Stack spacing={2}>
                   {
                     getPicture()
                   }
 
-                  <Typography variant='h4'>
+                  <Typography variant='h4' data-testid={`${router[RouterPages.pictureOfTheDay].testId}-title`}>
                     {
                       pictureOfTheDay?.title
                     }
                   </Typography>
-                  <Typography variant='body1'>
+                  <Typography variant='body1' data-testid={`${router[RouterPages.pictureOfTheDay].testId}-description`}>
                     {
                       pictureOfTheDay?.explanation
                     }
                   </Typography>
-                  <Typography variant='body2'>
+                  <Typography variant='body2' data-testid={`${router[RouterPages.pictureOfTheDay].testId}-copyright`}>
                     {
                       `Copyright ${pictureOfTheDay?.copyright} ${pictureOfTheDay?.date}`
                     }

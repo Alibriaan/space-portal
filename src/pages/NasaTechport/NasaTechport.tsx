@@ -1,10 +1,9 @@
 import { Card, CardContent, Container, FormControl, MenuItem, Select, SelectChangeEvent, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import PageContainer from "../../components/PageContainer/PageContainer";
-import { ProjectMember, TechPortProjectListElement, TechPortProjectResponse } from "../../interfaces/techport-response.interface";
+import { ProjectMember, TechPortProjectListElement, TechPortProjectResponse } from "../../interfaces/techport-response.interfaces";
 import { getProject, getProjects } from "../../services/http/nasa/techport";
 import Paper from '@mui/material/Paper';
-import InputLabel from '@mui/material/InputLabel';
 import router, { RouterPages } from "../../router";
 
 function MemberTable(props: { members: ProjectMember[]}) {
@@ -38,7 +37,10 @@ function MemberTable(props: { members: ProjectMember[]}) {
 
 function ProjectDescription(props: { projectDescription: TechPortProjectResponse}) {
   return (
-    <Card elevation={5}>
+    <Card
+      elevation={5}
+      data-testid={`${router[RouterPages.nasaTechport].testId}-project-description`}
+    >
       <CardContent>
         <Stack spacing={2}>
           <Container maxWidth={false}>
@@ -104,7 +106,6 @@ function ProjectDescription(props: { projectDescription: TechPortProjectResponse
 
 export default function NasaTechPortPage() {
   const [techPortProjects, setTechPortProjects] = useState<TechPortProjectListElement[]>();
-  const [selectedProjects, setSelectedProjects] = useState<string>('');
   const [projectDescription, setProjectDescription] = useState<TechPortProjectResponse>();
 
   useEffect(() => {
@@ -122,8 +123,6 @@ export default function NasaTechPortPage() {
   }
 
   const handleProjectSelect = (event: SelectChangeEvent) => {
-    setSelectedProjects(event.target.value);
-
     fetchProjectDescription(event.target.value);
   };
 
@@ -141,10 +140,18 @@ export default function NasaTechPortPage() {
           margin: '25px',
         }}>
           <Typography variant='h4'>Project Id</Typography>
-          <Select labelId="project-select-label" onChange={handleProjectSelect}>
+          <Select
+            labelId="project-select-label"
+            data-testid={`${router[RouterPages.nasaTechport].testId}-project-select`}
+            onChange={handleProjectSelect}
+          >
             {
               techPortProjects?.map((project, index) => (
-                <MenuItem key={index} value={project.projectId}>{project.projectId}</MenuItem>
+                <MenuItem
+                  key={index}
+                  value={project.projectId}
+                  data-testid={`${router[RouterPages.nasaTechport].testId}-project-select-option`}
+                >{project.projectId}</MenuItem>
               ))
             }
           </Select>

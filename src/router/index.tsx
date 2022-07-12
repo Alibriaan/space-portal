@@ -42,8 +42,8 @@ const router: RouteConfiguration[] = [
   },
   {
     name: 'Nasa Techport',
-    testId: 'nasa-tech-porth',
-    link: '/nasa-tech-porth',
+    testId: 'nasa-tech-port',
+    link: '/nasa-tech-port',
     page: <NasaTechPortPage />,
     description: 'Page with nasa technology informations',
   },

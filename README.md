@@ -3,7 +3,8 @@
 
 Проект создан для урпрощения доступа к данным NASA и для привлечения людей в космическую отрасль.
 
-![Build Status](http://18.118.113.13:8080/buildStatus/icon?job=Space+portal+project)
+
+[![Build Status](http://18.118.113.13:8080/buildStatus/icon?job=Space+Portal+Folder%2FSpace+Portal+-+develop+branch)](http://18.118.113.13:8080/job/Space%20Portal%20Folder/job/Space%20portal%20project%20-%20master%20branch/)
 
 ## Instalation
 ```bash

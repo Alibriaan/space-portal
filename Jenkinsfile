@@ -30,23 +30,23 @@ pipeline {
                 sh 'npm install'
             }
         }
-        stage('Start server') {
-          steps  {
-            sh 'npm run start'
-          }
-        }
+        // stage('Start server') {
+        //   steps  {
+        //     sh 'npm run start'
+        //   }
+        // }
         stage('Testing') {
             steps {
                 echo 'Test process'
                 sh 'npm run test:unit'
                 sh 'npm run test:unit:component'
-                sh 'npm run test:e2e'
+                // sh 'npm run test:e2e'
             }
         }
-        stage('Stop server') {
-          steps {
-            sh "taskkill -F -IM node.exe"
-          }
-        }
+        // stage('Stop server') {
+        //   steps {
+        //     sh "taskkill -F -IM node.exe"
+        //   }
+        // }
     }
 }

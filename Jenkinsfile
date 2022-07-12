@@ -34,10 +34,22 @@ pipeline {
                 echo 'Test process'
                 sh 'npm run test:unit'
            }
-        }
+         }
         stage('Build') {
           steps {
             sh 'npm run build'
+          }
+        }
+        stage('S3 Deploy') {
+          steps {
+            withAWS(region:AWS_S3_REGION, credentials: AWS_S3_CREDENTIALS) {
+              sh 'echo "Uploading content with AWS creds"'
+                s3Upload(
+                  bucket: AWS_S3_BUCKET,
+                  includePathPattern: "**/*.*",
+                  workingDir: "${WORKSPACE}/build",
+                )
+            }
           }
         }
     }

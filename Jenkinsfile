@@ -30,6 +30,11 @@ pipeline {
                 sh 'npm install'
             }
         }
+        stage('Start server') {
+          steps  {
+            sh 'npm run start'
+          }
+        }
         stage('Testing') {
             steps {
                 echo 'Test process'
@@ -37,6 +42,11 @@ pipeline {
                 sh 'npm run test:unit:component'
                 sh 'npm run test:e2e'
             }
+        }
+        stage('Stop server') {
+          steps {
+            sh "stop": "taskkill -F -IM node.exe"
+          }
         }
     }
 }

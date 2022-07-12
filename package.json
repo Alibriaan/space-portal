@@ -6,6 +6,7 @@
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@mui/material": "^5.8.7",
+    "@types/react-test-renderer": "^18.0.0",
     "@types/supertest": "^2.0.12",
     "axios": "^0.27.2",
     "husky": "^8.0.1",
@@ -22,12 +23,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test:unit:component": "react-scripts test",
     "eject": "react-scripts eject",
     "test:unit": "jest",
     "open:e2e": "cypress open",
     "test:e2e": "cypress run --e2e --browser chrome",
-    "postinstall": "npx husky-init"
+    "postinstall": "npx husky-init",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -48,18 +49,17 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
-    "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.11.43",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.6",
     "@types/react-window": "^1.8.5",
     "cypress": "^10.3.0",
-    "husky": "^8.0.1",
+    "husky": "^8.0.0",
+    "jest": "^28.1.2",
     "lint-staged": "^13.0.3",
-    "supertest": "^6.2.4",
+    "react-test-renderer": "^18.2.0",
     "ts-jest": "^28.0.5",
     "typescript": "^4.7.4"
   }

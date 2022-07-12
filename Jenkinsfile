@@ -50,7 +50,7 @@ pipeline {
           steps {
             withAWS(region:AWS_S3_REGION, credentials: AWS_S3_CREDENTIALS) {
               sh 'echo "Uploading content with AWS creds"'
-                s3Upload(path: WORKSPACE, workingDir:'build', bucket: AWS_S3_BUCKET)
+                s3Upload(bucket: AWS_S3_BUCKET, workingDir: "${WORKSPACE}/build" includePathPattern:'**/*')
             }
           }
         }

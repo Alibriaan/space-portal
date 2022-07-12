@@ -45,7 +45,7 @@ pipeline {
         }
         stage('Stop server') {
           steps {
-            sh "stop": "taskkill -F -IM node.exe"
+            sh "taskkill -F -IM node.exe"
           }
         }
     }

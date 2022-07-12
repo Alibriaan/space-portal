@@ -8,7 +8,7 @@ function App() {
     <Router>
       <Routes>
         {
-          router.map((route: RouteConfiguration, index: number) => (
+          router.map((route: RouteConfiguration, index: number) => ( 
             <Route key={index} path={route.link} element={route.page} />
           ))
         }

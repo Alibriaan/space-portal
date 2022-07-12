@@ -9,22 +9,23 @@ export default defineConfig({
   requestTimeout: 60000,
   video: false,
   chromeWebSecurity: false,
-  supportFolder: './src/__test__/e2e',
+  supportFolder: "./src/test/cypress",
   videoUploadOnPasses: false,
   videoCompression: false,
   numTestsKeptInMemory: 100,
   retries: 1,
   port: 9999,
+
   e2e: {
     supportFile: false,
-    // supportFile: './src/__test__/e2e/specs/*.spec.ts',
-    baseUrl: 'http://localhost:3000',
-    specPattern: './src/__test__/e2e/specs/**/*.spec.ts',
+    baseUrl: "http://localhost:3000",
+    specPattern: "./src/test/cypress/e2e/specs/**/*.spec.ts",
   },
+
   env: {
-    "main": "/",
+    main: "/",
     "picture-of-the-day": "/picture-of-the-day",
     "epic-images": "/epic-images",
     "nasa-tech-port": "/nasa-tech-port",
-  }
+  },
 });

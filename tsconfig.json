@@ -6,7 +6,7 @@
       "dom.iterable",
       "esnext"
     ],
-    "types": ["node", "jest", "cypress"],
+    "types": ["node"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -24,5 +24,5 @@
   "include": [
     "src"
   ],
-  "exclude": ["./src/__test__/e2e"],
+  "exclude": ["./src/test"]
 }

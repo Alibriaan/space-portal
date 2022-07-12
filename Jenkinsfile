@@ -32,14 +32,15 @@ pipeline {
         //         echo 'Install process'
         //         sh 'npm install'
         //     }
+        // }
         // stage('Testing') {
         //     steps {
         //         echo 'Test process'
         //         sh 'npm run test:unit'
                 // sh 'npm run test:unit:component'
                 // sh 'npm run test:e2e'
-            }
-        }
+        //    }
+        //  }
         // stage('Build') {
         //   steps {
         //     sh 'npm run build'

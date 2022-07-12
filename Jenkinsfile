@@ -1,11 +1,8 @@
 #!/usr/bin/env groovy
 pipeline {
-    agent {
-        docker {
-            image 'node:lts'
-            args '-u root'
-        }
-    }
+    agent any
+
+    tools { nodejs "node" }
 
     environment {
         NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
@@ -19,7 +16,7 @@ pipeline {
         stage('Git') {
             steps {
                 script {
-                    echo 'master branch'
+                    echo 'develop branch'
                     git credentialsId: env.GIT_CREDENTIALS, url: env.REPOSITORY, branch: 'develop'
                 }
             }
@@ -30,11 +27,6 @@ pipeline {
                 sh 'npm install'
             }
         }
-        // stage('Start server') {
-        //   steps  {
-        //     sh 'npm run start'
-        //   }
-        // }
         stage('Testing') {
             steps {
                 echo 'Test process'
@@ -43,10 +35,5 @@ pipeline {
                 // sh 'npm run test:e2e'
             }
         }
-        // stage('Stop server') {
-        //   steps {
-        //     sh "taskkill -F -IM node.exe"
-        //   }
-        // }
     }
 }

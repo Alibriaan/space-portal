@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { HashRouter as Router } from "react-router-dom";
 import router, { RouteConfiguration } from './router';
 
-function App() {
+function App() { 
   return (
     <Router>
       <Routes>

@@ -2,7 +2,6 @@ import React from 'react';
 import { Routes, Route } from "react-router-dom";
 import { HashRouter as Router } from "react-router-dom";
 import router, { RouteConfiguration } from './router';
-import './App.css';
 
 function App() {
   return (

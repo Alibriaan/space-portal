@@ -27,12 +27,12 @@ pipeline {
                 }
             }
         }
-        // stage('Install') {
-        //     steps {
-        //         echo 'Install process'
-        //         sh 'npm install'
-        //     }
-        // }
+        stage('Install') {
+            steps {
+                echo 'Install process'
+                sh 'npm install'
+            }
+        }
         // stage('Testing') {
         //     steps {
         //         echo 'Test process'

@@ -52,7 +52,7 @@ pipeline {
         }
         stage('E2E Testing') {
             steps {
-                sh "node_modules\\.bin\\cypress run"
+                sh "node_modules/.bin/сypress run"
             }
         }
     }

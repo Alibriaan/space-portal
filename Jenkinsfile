@@ -50,6 +50,11 @@ pipeline {
                 }
             }
         }
+        stage('Install Cypress') {
+            steps {
+                sh ' npm install cypress'
+            }
+        }
         // stage('E2E Testing') {
         //     steps {
         //         sh "${WORKSPACE}/node_modules/.bin/сypress run"

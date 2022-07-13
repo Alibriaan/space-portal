@@ -49,10 +49,10 @@ pipeline {
                 }
             }
         }
-        stage('E2E Testing') {
-            steps {
-                sh "npm run test:e2e"
-            }
-        }
+        // stage('E2E Testing') {
+        //     steps {
+        //         sh "npm run test:e2e"
+        //     }
+        // }
     }
 }

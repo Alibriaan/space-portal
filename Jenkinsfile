@@ -52,7 +52,8 @@ pipeline {
         }
         stage('E2E Testing') {
             steps {
-                sh(script: 'NO_COLOR=1 node_modules/.bin/cypress run || false')
+                sh 'npm run cypress:install'
+                sh 'npm run test:e2e'
             }
         }
     }

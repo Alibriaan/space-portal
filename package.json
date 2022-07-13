@@ -33,6 +33,8 @@
     "test:unit": "jest",
     "open:e2e": "cypress open",
     "test:e2e": "cypress run --e2e --browser chrome",
+    "test:e2e:local": "cypress run --e2e --browser chrome baseUrl=http://localhost:3000",
+    "start:test:e2e:local": "concurrently \"npm run test:e2e:local\" --kill-others \"npm run start\" --success first",
     "postinstall": "npx husky-init",
     "prepare": "husky install"
   },
@@ -63,6 +65,7 @@
     "@types/react-window": "^1.8.5",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
+    "concurrently": "^7.2.2",
     "cypress": "^10.3.0",
     "eslint": "^8.19.0",
     "husky": "^8.0.0",

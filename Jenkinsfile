@@ -11,7 +11,8 @@ pipeline {
         GIT_CREDENTIALS = 'jenkins_github_credentials'
         AWS_S3_CREDENTIALS = 'space-portal-s3-publisher-credentials'
         AWS_S3_REGION = 'us-east-2'
-        AWS_S3_BUCKET = 'spaceportal'
+        AWS_S3_BUCKET = 'spaceportal-dev'
+        BASE_URL = 'http://spaceportal-dev.s3-website.us-east-2.amazonaws.com/'
     }
 
     stages {
@@ -25,20 +26,34 @@ pipeline {
         }
         stage('Install') {
             steps {
-                echo 'Install process'
                 sh 'npm install'
             }
         }
-        stage('Testing') {
+        stage('Unit Testing') {
             steps {
-                echo 'Test process'
                 sh 'npm run test:unit'
-           }
+            }
         }
         stage('Build') {
-          steps {
-            sh 'npm run build'
-          }
+            steps {
+                sh 'npm run build'
+            }
+        }
+        stage('Deploy To Develop Instance') {
+            steps {
+                withAWS(region:AWS_S3_REGION, credentials: AWS_S3_CREDENTIALS) {
+                    s3Upload(
+                        bucket: AWS_S3_BUCKET,
+                        includePathPattern: "**/*.*",
+                        workingDir: "${WORKSPACE}/build",
+                    )
+                }
+            }
+        }
+        stage('E2E Testing') {
+            steps {
+                sh 'npm run test:e2e'
+            }
         }
     }
 }

@@ -32,7 +32,7 @@
     "lint:fix": "eslint . --fix --ext .js,.ts,.jsx,.tsx .",
     "test:unit": "jest",
     "open:e2e": "cypress open",
-    "test:e2e": "cypress run --e2e --browser chromium",
+    "test:e2e": "cypress run --e2e",
     "test:e2e:local": "cypress run --e2e --browser chromium baseUrl=http://localhost:3000",
     "start:test:e2e:local": "concurrently \"npm run test:e2e:local\" --kill-others \"npm run start\" --success first",
     "postinstall": "npx husky-init",

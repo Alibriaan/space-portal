@@ -52,7 +52,7 @@ pipeline {
         }
         stage('Install Cypress') {
             steps {
-                sh ' npm install cypress'
+                sh ' npm install -force cypress'
             }
         }
         // stage('E2E Testing') {

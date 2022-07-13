@@ -26,7 +26,8 @@ pipeline {
         }
         stage('Install') {
             steps {
-                sh ' npm ci'
+                sh 'npm cache clean'
+                sh 'npm install'
             }
         }
         stage('Unit Testing') {

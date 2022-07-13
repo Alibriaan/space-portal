@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Install') {
             steps {
-                sh ' npm install'
+                sh ' npm ci'
             }
         }
         stage('Unit Testing') {
@@ -48,11 +48,6 @@ pipeline {
                         workingDir: "${WORKSPACE}/build",
                     )
                 }
-            }
-        }
-        stage('Install Cypress') {
-            steps {
-                sh ' npm install -force cypress'
             }
         }
         // stage('E2E Testing') {

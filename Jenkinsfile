@@ -19,15 +19,13 @@ pipeline {
         stage('Git') {
             steps {
                 script {
-                    echo 'master branch'
-                    git credentialsId: env.GIT_CREDENTIALS, url: env.REPOSITORY, branch: 'master'
+                    git credentialsId: env.GIT_CREDENTIALS, url: env.REPOSITORY, branch: 'develop'
                 }
             }
         }
         stage('Install') {
             steps {
-                sh 'npm cache clean'
-                sh 'npm install'
+                sh 'npm ci'
             }
         }
         stage('Unit Testing') {
@@ -51,10 +49,10 @@ pipeline {
                 }
             }
         }
-        // stage('E2E Testing') {
-        //     steps {
-        //         sh "${WORKSPACE}/node_modules/.bin/сypress run"
-        //     }
-        // }
+        stage('E2E Testing') {
+            steps {
+                sh "npm run test:e2e"
+            }
+        }
     }
 }

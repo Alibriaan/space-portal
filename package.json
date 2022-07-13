@@ -34,7 +34,6 @@
     "open:e2e": "cypress open",
     "test:e2e": "cypress run --e2e --browser chrome",
     "test:e2e:local": "cypress run --e2e --browser chrome baseUrl=http://localhost:3000",
-    "cypress:install": "cypress install",
     "start:test:e2e:local": "concurrently \"npm run test:e2e:local\" --kill-others \"npm run start\" --success first",
     "postinstall": "npx husky-init",
     "prepare": "husky install"

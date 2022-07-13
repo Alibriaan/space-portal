@@ -52,7 +52,7 @@ pipeline {
         }
         stage('E2E Testing') {
             steps {
-                sh 'npm run test:e2e'
+                sh(script: 'NO_COLOR=1 node_modules/.bin/cypress run || false')
             }
         }
     }

@@ -50,14 +50,9 @@ pipeline {
                 }
             }
         }
-        stage('Cypress install') {
-            steps{
-                sh "node_modules\\.bin\\cypress run"
-            }
-        }
         stage('E2E Testing') {
             steps {
-                sh 'npm run test:e2e'
+                sh "node_modules\\.bin\\cypress run"
             }
         }
     }

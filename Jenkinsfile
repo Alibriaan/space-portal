@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Install') {
             steps {
-                sh 'npm ci'
+                sh 'npm install'
             }
         }
         stage('Unit Testing') {
@@ -49,6 +49,9 @@ pipeline {
                     )
                 }
             }
+        }
+        stage('Cypress install') {
+            sh 'npm run cypress:install'
         }
         stage('E2E Testing') {
             steps {
